@@ -17,6 +17,26 @@
   gtag('config', 'AW-17373469989');
 </script>
 
+<!-- Event snippet for Page view conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17373469989/xxEBCIiWy_MaEKW6qNxA',
+      'value': 1.0,
+      'currency': 'EGP',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
     <!-- css styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/all.min.css" />
